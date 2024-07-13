@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notifier_provider/pages/counter/counter_page.dart';
+import 'package:notifier_provider/pages/enum_activity/enum_activity_page.dart';
+import 'package:notifier_provider/pages/sealed_activity/sealed_activity_page.dart';
 import 'package:notifier_provider/widgets/custom_button.dart';
 
 void main() {
@@ -45,6 +47,14 @@ class MyHomePage extends StatelessWidget {
             CustomButton(
               title: 'Counter',
               child: CounterPage(),
+            ),
+            CustomButton(
+              title: 'EnumActivity',
+              child: EnumActivityPage(),
+            ),
+            CustomButton(
+              title: 'SealedActivity',
+              child: SealedActivityPage(),
             ),
           ],
         ),
