@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notifier_provider/pages/counter/counter_page.dart';
 import 'package:notifier_provider/pages/enum_activity/enum_activity_page.dart';
+import 'package:notifier_provider/pages/enum_async_activity/enum_async_activity_page.dart';
 import 'package:notifier_provider/pages/sealed_activity/sealed_activity_page.dart';
 import 'package:notifier_provider/widgets/custom_button.dart';
 
@@ -55,6 +56,10 @@ class MyHomePage extends StatelessWidget {
             CustomButton(
               title: 'SealedActivity',
               child: SealedActivityPage(),
+            ),
+            CustomButton(
+              title: 'EnumAsyncActivity',
+              child: EnumAsyncActivityPage(),
             ),
           ],
         ),
