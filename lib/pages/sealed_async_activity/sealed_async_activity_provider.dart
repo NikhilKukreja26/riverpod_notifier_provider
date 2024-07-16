@@ -1,27 +1,33 @@
 import 'package:notifier_provider/models/activity.dart';
-import 'package:notifier_provider/pages/sealed_activity/sealed_activity_state.dart';
+import 'package:notifier_provider/pages/sealed_async_activity/sealed_async_activity_state.dart';
 import 'package:notifier_provider/providers/dio_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'sealed_activity_provider.g.dart';
+part 'sealed_async_activity_provider.g.dart';
 
 @riverpod
-class SealedActivity extends _$SealedActivity {
+class SealedAsyncActivity extends _$SealedAsyncActivity {
   int _errorCounter = 0;
 
+  SealedAsyncActivity() {
+    print('[sealedAsyncActivityProvider] constructor called');
+  }
+
   @override
-  SealedActivityState build() {
+  SealedAsyncActivityState build() {
+    print('[sealedAsyncActivityProvider] initialized');
     ref.onDispose(() {
-      print('[sealedActivityProvider] disposed');
+      print('[sealedAsyncActivityProvider] disposed');
     });
 
     print('hashCode: $hashCode');
-    return const SealedActivityInitial();
+    fetchActivity(activityType: activityTypes[0]);
+    return const SealedAsyncActivityLoading();
   }
 
   Future<void> fetchActivity({required String activityType}) async {
     print('hashCode in fetchActivity: $hashCode');
-    state = const SealedActivityLoading();
+    state = const SealedAsyncActivityLoading();
 
     try {
       print('_errorCounter: $_errorCounter');
@@ -37,9 +43,9 @@ class SealedActivity extends _$SealedActivity {
         for (final activity in activityList) Activity.fromJson(activity),
       ];
 
-      state = SealedActivitySuccess(activities: activities);
+      state = SealedAsyncActivitySuccess(activities: activities);
     } catch (e) {
-      state = SealedActivityFailure(
+      state = SealedAsyncActivityFailure(
         error: e.toString(),
       );
     }

@@ -1,26 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sealed_activity_provider.dart';
+part of 'sealed_async_activity_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sealedActivityHash() => r'c01fe45c378d453bbb869de4c887dc560c86d82f';
+String _$sealedAsyncActivityHash() =>
+    r'a766e7d91da81b993dae33042eae2ed25791c3c4';
 
-/// See also [SealedActivity].
-@ProviderFor(SealedActivity)
-final sealedActivityProvider =
-    AutoDisposeNotifierProvider<SealedActivity, SealedActivityState>.internal(
-  SealedActivity.new,
-  name: r'sealedActivityProvider',
+/// See also [SealedAsyncActivity].
+@ProviderFor(SealedAsyncActivity)
+final sealedAsyncActivityProvider = AutoDisposeNotifierProvider<
+    SealedAsyncActivity, SealedAsyncActivityState>.internal(
+  SealedAsyncActivity.new,
+  name: r'sealedAsyncActivityProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$sealedActivityHash,
+      : _$sealedAsyncActivityHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SealedActivity = AutoDisposeNotifier<SealedActivityState>;
+typedef _$SealedAsyncActivity = AutoDisposeNotifier<SealedAsyncActivityState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
